@@ -1,0 +1,96 @@
+package La_Cesi;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
+
+public class Preguntar_Plato extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtNumero;
+	private JTextField txtNombre;
+	private JTextField txtPrecio;
+	private JComboBox cboTipo;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Preguntar_Plato frame = new Preguntar_Plato();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Preguntar_Plato() {
+		setTitle("Registrar_Plato");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 209);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		txtNumero = new JTextField();
+		txtNumero.setColumns(10);
+		txtNumero.setBounds(89, 14, 141, 20);
+		contentPane.add(txtNumero);
+		
+		JLabel label = new JLabel("N\u00B0");
+		label.setFont(new Font("AR JULIAN", Font.BOLD, 15));
+		label.setBounds(10, 11, 69, 25);
+		contentPane.add(label);
+		
+		JLabel lblTipo = new JLabel("Tipo");
+		lblTipo.setFont(new Font("AR JULIAN", Font.BOLD, 15));
+		lblTipo.setBounds(10, 83, 69, 25);
+		contentPane.add(lblTipo);
+		
+		cboTipo = new JComboBox();
+		cboTipo.setBounds(89, 86, 141, 20);
+		contentPane.add(cboTipo);
+		
+		JButton button = new JButton("Registrar");
+		button.setFont(new Font("AR JULIAN", Font.BOLD, 14));
+		button.setBounds(289, 52, 115, 35);
+		contentPane.add(button);
+		
+		JLabel lblNombre = new JLabel("Nombre");
+		lblNombre.setFont(new Font("AR JULIAN", Font.BOLD, 15));
+		lblNombre.setBounds(10, 47, 69, 25);
+		contentPane.add(lblNombre);
+		
+		JLabel lblPrecio = new JLabel("Precio");
+		lblPrecio.setFont(new Font("AR JULIAN", Font.BOLD, 15));
+		lblPrecio.setBounds(10, 119, 69, 25);
+		contentPane.add(lblPrecio);
+		
+		txtNombre = new JTextField();
+		txtNombre.setColumns(10);
+		txtNombre.setBounds(89, 45, 141, 20);
+		contentPane.add(txtNombre);
+		
+		txtPrecio = new JTextField();
+		txtPrecio.setColumns(10);
+		txtPrecio.setBounds(89, 117, 141, 20);
+		contentPane.add(txtPrecio);
+	}
+
+}

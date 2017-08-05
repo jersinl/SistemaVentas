@@ -1,0 +1,142 @@
+package La_Cesi;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JList;
+import javax.swing.AbstractListModel;
+import javax.swing.JToggleButton;
+import javax.swing.JSpinner;
+import javax.swing.ListSelectionModel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+public class Registrar_Orden extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtN_Orden;
+	private JTextField txtFecha;
+	private JTextField txtN_Mesa;
+	private JTextField txtPrecio;
+	private JButton btnBuscar;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Registrar_Orden frame = new Registrar_Orden();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Registrar_Orden() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 740, 693);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNOrden = new JLabel("N\u00B0 Orden");
+		lblNOrden.setFont(new Font("AR JULIAN", Font.BOLD, 15));
+		lblNOrden.setBounds(10, 11, 104, 25);
+		contentPane.add(lblNOrden);
+		
+		JLabel lblTipo = new JLabel("Tipo");
+		lblTipo.setFont(new Font("AR JULIAN", Font.BOLD, 15));
+		lblTipo.setBounds(10, 83, 69, 25);
+		contentPane.add(lblTipo);
+		
+		JComboBox cboTipo = new JComboBox();
+		cboTipo.setBounds(124, 86, 104, 20);
+		contentPane.add(cboTipo);
+		
+		txtN_Orden = new JTextField();
+		txtN_Orden.setColumns(10);
+		txtN_Orden.setBounds(124, 14, 104, 20);
+		contentPane.add(txtN_Orden);
+		
+		JLabel lblFecha = new JLabel("Fecha");
+		lblFecha.setFont(new Font("AR JULIAN", Font.BOLD, 15));
+		lblFecha.setBounds(317, 11, 69, 25);
+		contentPane.add(lblFecha);
+		
+		txtFecha = new JTextField();
+		txtFecha.setBounds(396, 14, 223, 20);
+		contentPane.add(txtFecha);
+		txtFecha.setColumns(10);
+		
+		JLabel lblNMesa = new JLabel("N\u00B0 Mesa");
+		lblNMesa.setFont(new Font("AR JULIAN", Font.BOLD, 15));
+		lblNMesa.setBounds(10, 47, 104, 25);
+		contentPane.add(lblNMesa);
+		
+		txtN_Mesa = new JTextField();
+		txtN_Mesa.setColumns(10);
+		txtN_Mesa.setBounds(124, 50, 104, 20);
+		contentPane.add(txtN_Mesa);
+		
+		JLabel lblPrecio = new JLabel("Precio");
+		lblPrecio.setFont(new Font("AR JULIAN", Font.BOLD, 15));
+		lblPrecio.setBounds(10, 119, 69, 25);
+		contentPane.add(lblPrecio);
+		
+		txtPrecio = new JTextField();
+		txtPrecio.setColumns(10);
+		txtPrecio.setBounds(124, 117, 104, 20);
+		contentPane.add(txtPrecio);
+		
+		btnBuscar = new JButton("Buscar");
+		btnBuscar.setFont(new Font("AR JULIAN", Font.BOLD, 14));
+		btnBuscar.setBounds(317, 102, 115, 35);
+		contentPane.add(btnBuscar);
+		
+		JList list = new JList();
+		list.setBounds(10, 167, 1, 1);
+		contentPane.add(list);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 170, 569, 218);
+		contentPane.add(scrollPane);
+		
+		JTextArea textArea = new JTextArea();
+		scrollPane.setViewportView(textArea);
+		
+		JButton btnElegir = new JButton("Elegir");
+		btnElegir.setFont(new Font("AR JULIAN", Font.BOLD, 14));
+		btnElegir.setBounds(589, 265, 115, 35);
+		contentPane.add(btnElegir);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(10, 416, 569, 218);
+		contentPane.add(scrollPane_1);
+		
+		JTextArea textArea_1 = new JTextArea();
+		scrollPane_1.setViewportView(textArea_1);
+		
+		JButton btnGrabar = new JButton("Grabar");
+		btnGrabar.setFont(new Font("AR JULIAN", Font.BOLD, 14));
+		btnGrabar.setBounds(589, 496, 115, 35);
+		contentPane.add(btnGrabar);
+	}
+}

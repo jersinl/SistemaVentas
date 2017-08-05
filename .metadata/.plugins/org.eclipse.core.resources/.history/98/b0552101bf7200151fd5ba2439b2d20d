@@ -1,0 +1,92 @@
+package La_Cesi;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
+
+public class Ingresar extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtUsuario;
+	private JPasswordField txtPassword;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Ingresar frame = new Ingresar();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Ingresar() {
+		setTitle("Ingresar");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 468, 326);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblUsuario = new JLabel("Usuario:");
+		lblUsuario.setFont(new Font("Century", Font.BOLD, 18));
+		lblUsuario.setBounds(33, 58, 113, 22);
+		contentPane.add(lblUsuario);
+		
+		JLabel lblPassword = new JLabel("Password:");
+		lblPassword.setFont(new Font("Century", Font.BOLD, 18));
+		lblPassword.setBounds(33, 91, 113, 22);
+		contentPane.add(lblPassword);
+		
+		txtUsuario = new JTextField();
+		txtUsuario.setBounds(156, 61, 165, 22);
+		contentPane.add(txtUsuario);
+		txtUsuario.setColumns(10);
+		
+		JLabel lblDoaCesi = new JLabel(" DO\u00D1A - CESI");
+		lblDoaCesi.setForeground(Color.BLACK);
+		lblDoaCesi.setFont(new Font("Century", Font.BOLD | Font.ITALIC, 22));
+		lblDoaCesi.setBounds(116, 11, 218, 29);
+		contentPane.add(lblDoaCesi);
+		
+		JButton btnLogin = new JButton("Login");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnLogin.setFont(new Font("Century", Font.BOLD, 13));
+		btnLogin.setBounds(139, 154, 101, 29);
+		contentPane.add(btnLogin);
+		
+		txtPassword = new JPasswordField();
+		txtPassword.setBounds(156, 94, 165, 22);
+		contentPane.add(txtPassword);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("G:\\Proyecto- Do\u00F1a Cesi\\Do\u00F1a-Cesi\\src\\Imagenes\\fondo login.jpg"));
+		label.setBounds(0, 0, 460, 288);
+		contentPane.add(label);
+	}
+}

@@ -1,0 +1,107 @@
+package La_Cesi;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
+import java.awt.Color;
+import javax.swing.UIManager;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JToggleButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFormattedTextField;
+import javax.swing.JTree;
+import javax.swing.JList;
+import javax.swing.AbstractListModel;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+
+public class Presentacion extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Presentacion frame = new Presentacion();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Presentacion() {
+		setTitle("Presentacion");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 494, 379);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu mnMenu = new JMenu("Servicio");
+		menuBar.add(mnMenu);
+		
+		JMenuItem mntmServicio = new JMenuItem("preguntar plato");
+		mnMenu.add(mntmServicio);
+		
+		JMenuItem mntmZxczx = new JMenuItem("registrar mesa");
+		mnMenu.add(mntmZxczx);
+		
+		JMenuItem mntmRegistrarMesa = new JMenuItem("registrar mesa 2");
+		mnMenu.add(mntmRegistrarMesa);
+		
+		JMenuItem mntmRegistrarOrden = new JMenuItem("registrar orden");
+		mnMenu.add(mntmRegistrarOrden);
+		
+		JMenu mnServicio = new JMenu("Servicio");
+		menuBar.add(mnServicio);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("New menu item");
+		mnServicio.add(mntmNewMenuItem);
+		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("New menu item");
+		mnServicio.add(mntmNewMenuItem_1);
+		
+		JMenu mnAtencion = new JMenu("Atencion");
+		menuBar.add(mnAtencion);
+		
+		JMenuItem mntmNewMenuItem_2 = new JMenuItem("New menu item");
+		mnAtencion.add(mntmNewMenuItem_2);
+		
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("New menu item");
+		mnAtencion.add(mntmNewMenuItem_3);
+		
+		JMenu mnPostres = new JMenu("Postres");
+		menuBar.add(mnPostres);
+		
+		JMenuItem mntmNewMenuItem_4 = new JMenuItem("New menu item");
+		mnPostres.add(mntmNewMenuItem_4);
+		
+		JMenuItem mntmNewMenuItem_5 = new JMenuItem("New menu item");
+		mnPostres.add(mntmNewMenuItem_5);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("G:\\Proyecto- Do\u00F1a Cesi\\Do\u00F1a-Cesi\\src\\Imagenes\\cesi.jpg"));
+		label.setBounds(0, 0, 478, 340);
+		contentPane.add(label);
+	}
+}

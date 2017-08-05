@@ -1,0 +1,110 @@
+package La_Cesi;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+import javax.swing.DefaultComboBoxModel;
+
+public class Preguntar_Plato extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtNumero;
+	private JTextField txtNombre;
+	private JTextField txtPrecio;
+	private JComboBox cboTipo;
+	private JLabel lblNewLabel;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Preguntar_Plato frame = new Preguntar_Plato();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Preguntar_Plato() {
+		setTitle("Registrar_Plato");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 412, 275);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		txtNumero = new JTextField();
+		txtNumero.setColumns(10);
+		txtNumero.setBounds(123, 53, 125, 20);
+		contentPane.add(txtNumero);
+		
+		JLabel lblCodigoPlato = new JLabel("Codigo Plato");
+		lblCodigoPlato.setForeground(Color.WHITE);
+		lblCodigoPlato.setFont(new Font("AR JULIAN", Font.BOLD, 15));
+		lblCodigoPlato.setBounds(10, 43, 115, 25);
+		contentPane.add(lblCodigoPlato);
+		
+		JLabel lblTipo = new JLabel("Tipo");
+		lblTipo.setForeground(Color.WHITE);
+		lblTipo.setFont(new Font("AR JULIAN", Font.BOLD, 15));
+		lblTipo.setBounds(10, 115, 69, 25);
+		contentPane.add(lblTipo);
+		
+		cboTipo = new JComboBox();
+		cboTipo.setModel(new DefaultComboBoxModel(new String[] {"Desayuno", "Almuerzo", "Cena"}));
+		cboTipo.setBounds(123, 125, 125, 20);
+		contentPane.add(cboTipo);
+		
+		JButton button = new JButton("Registrar");
+		button.setFont(new Font("AR JULIAN", Font.BOLD, 14));
+		button.setBounds(271, 191, 115, 35);
+		contentPane.add(button);
+		
+		JLabel lblNombre = new JLabel("Nombre");
+		lblNombre.setForeground(Color.WHITE);
+		lblNombre.setFont(new Font("AR JULIAN", Font.BOLD, 15));
+		lblNombre.setBounds(10, 79, 69, 25);
+		contentPane.add(lblNombre);
+		
+		JLabel lblPrecio = new JLabel("Precio");
+		lblPrecio.setForeground(Color.WHITE);
+		lblPrecio.setFont(new Font("AR JULIAN", Font.BOLD, 15));
+		lblPrecio.setBounds(10, 151, 69, 25);
+		contentPane.add(lblPrecio);
+		
+		txtNombre = new JTextField();
+		txtNombre.setColumns(10);
+		txtNombre.setBounds(123, 84, 125, 20);
+		contentPane.add(txtNombre);
+		
+		txtPrecio = new JTextField();
+		txtPrecio.setColumns(10);
+		txtPrecio.setBounds(123, 156, 125, 20);
+		contentPane.add(txtPrecio);
+		
+		lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("G:\\Proyecto- Do\u00F1a Cesi\\Do\u00F1a-Cesi\\src\\Imagenes\\fondo_registrar_plato.jpg"));
+		lblNewLabel.setBounds(0, 0, 389, 237);
+		contentPane.add(lblNewLabel);
+	}
+
+}

@@ -1,0 +1,89 @@
+package La_Cesi;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JSpinner;
+import javax.swing.JFormattedTextField;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Registrar_Mesa extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtNumero;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Registrar_Mesa frame = new Registrar_Mesa();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Registrar_Mesa() {
+		setTitle("Registrar_Mesa");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 186);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblN = new JLabel("N\u00B0");
+		lblN.setFont(new Font("AR JULIAN", Font.BOLD, 15));
+		lblN.setBounds(10, 11, 69, 25);
+		contentPane.add(lblN);
+		
+		JLabel lblTipo = new JLabel("Tipo");
+		lblTipo.setFont(new Font("AR JULIAN", Font.BOLD, 15));
+		lblTipo.setBounds(10, 47, 69, 25);
+		contentPane.add(lblTipo);
+		
+		JLabel lblEstado = new JLabel("Estado");
+		lblEstado.setFont(new Font("AR JULIAN", Font.BOLD, 15));
+		lblEstado.setBounds(10, 83, 69, 25);
+		contentPane.add(lblEstado);
+		
+		txtNumero = new JTextField();
+		txtNumero.setBounds(89, 14, 86, 20);
+		contentPane.add(txtNumero);
+		txtNumero.setColumns(10);
+		
+		JComboBox cboTipo = new JComboBox();
+		cboTipo.setBounds(89, 50, 86, 20);
+		contentPane.add(cboTipo);
+		
+		JComboBox cboEstado = new JComboBox();
+		cboEstado.setBounds(89, 86, 86, 20);
+		contentPane.add(cboEstado);
+		
+		JButton btnRegistrar = new JButton("Registrar");
+		btnRegistrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnRegistrar.setFont(new Font("AR JULIAN", Font.BOLD, 14));
+		btnRegistrar.setBounds(245, 49, 115, 35);
+		contentPane.add(btnRegistrar);
+	}
+}
